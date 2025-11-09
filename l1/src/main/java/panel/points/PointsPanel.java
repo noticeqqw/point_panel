@@ -6,6 +6,7 @@ import java.awt.geom.Point2D;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Locale;
 
 /**
  * Панель для отображения координат точек на плоскости.
@@ -142,9 +143,9 @@ public class PointsPanel extends JPanel implements Observer {
         // Рисуем информацию о диапазоне координат
         g2d.setColor(Color.DARK_GRAY);
         g2d.setFont(new Font("Monospaced", Font.PLAIN, 10));
-        g2d.drawString(String.format("Диапозон: X[%.1f, %.1f] Y[%.1f, %.1f]",
+        g2d.drawString(String.format(Locale.US, "Диапазон: X[%.1f, %.1f] Y[%.1f, %.1f]",
                                     minX, maxX, minY, maxY), 5, 15);
-        g2d.drawString(String.format("Точки: %d/%d", points.size(), maxPoints),
+        g2d.drawString(String.format(Locale.US, "Точки: %d/%d", points.size(), maxPoints),
                       5, getHeight() - 5);
     }
 }
